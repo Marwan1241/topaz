@@ -33,10 +33,23 @@ class Index extends View
     <h1 class="" style="text-align: center;">CHECK OUT OUR COLLECTION FROM <br> TOPAZ SILVER JEWELLERY</h1>
 
     <div class="cards">
-      <div class="card">
+      <div class="card crd-1">
         <p class="card-text">Shop our products with ease</p>
         <button type="button" class="btn btn-light buy-btn">Buy Now</button>
       </div>
+      <div class="card crd-2">
+        <p class="card-text">check out our products</p>
+        <button type="button" class="btn btn-light buy-btn">Buy Now</button>
+      </div>
+      <div class="card crd-3  ">
+        <p class="card-text">check out our products</p>
+        <button type="button" class="btn btn-light buy-btn">Buy Now</button>
+      </div>
+      <div class="card crd-4">
+        <p class="card-text">check out our products</p>
+        <button type="button" class="btn btn-light buy-btn">Buy Now</button>
+      </div>
+   
     </div>
   </div>
   
