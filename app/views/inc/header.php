@@ -13,4 +13,3 @@
 
 <body>
   <?php require APPROOT . '/views/inc/nav.php'; ?>
-  <div class="container">
