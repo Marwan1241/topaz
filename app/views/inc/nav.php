@@ -11,11 +11,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'public'; ?>">Home</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'pages/about'; ?>">About</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'pages/contact'; ?>">Contact Us</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-solid fa-store"></i>
+          <i class="fa-solid fa-store">Shop</i>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -24,10 +30,10 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link">Cart <i class="fa-solid fa-cart-shopping"></i></a>
-        </li>
+        <ul>
+        </ul>
       </ul>
+    <i class="nav-link fa-solid fa-cart-shopping">Cart</i>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
