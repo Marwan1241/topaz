@@ -1,3 +1,23 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body{
+background-image: url("https://images.unsplash.com/photo-1563291074-2bf8677ac0e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fGJhY2tncm91bmR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60");
+background-color: #cccccc;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+
+.main{
+  background-color: white;
+  padding: 3% 0.5% 3% 0.5%;
+  opacity: 90%;
+  margin-bottom: 4%;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -5,8 +25,13 @@
   align-items: center;
   color: #4a3a4b;
   background-color: #d7d4dd;
-  height: 90vh;
-  padding: 5%;
+  height: 100vh;
+  padding: 4% 4% 6% 4%;
+  margin-bottom: 4%;
+}
+
+.hero > h1 {
+  margin: 1% 0 2% 0;
 }
 .cards {
   height: auto;
@@ -15,6 +40,7 @@
   grid-column-gap: 100px;
   grid-row-gap: 20px;
   margin-top: 10px;
+  margin-left: -3%;
 }
 
 .card {
@@ -31,10 +57,18 @@
 }
 
 .crd-1 {
-  background-image: url("https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80");
+  background-image: url("https://images.unsplash.com/photo-1512163143273-bde0e3cc7407?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
 }
 .crd-2 {
-  background-image: url("https://images.unsplash.com/photo-1513379733131-47fc74b45fc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1vZGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+  background-image: url("https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
+}
+
+.crd-3 {
+  background-image: url("https://images.unsplash.com/photo-1631832723559-f22a6381f3bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80");
+}
+
+.crd-4 {
+  background-image: url("https://images.unsplash.com/photo-1517615354272-efc29b707177?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
 }
 
 .card-text {
@@ -45,4 +79,51 @@
 
 .buy-btn {
   width: 30% !important;
+}
+
+.about{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about .left{
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 30px;
+  
+}
+
+.about .left h1 {
+  margin-bottom: 88px !important;
+}
+
+.about img{
+  width: 35%;
+}
+
+.reviews{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.review-cards{
+  display: flex;
+  justify-content: space-around;
+}
+
+.reviews .review-cards .review-card .card-img-top{
+  border-radius: 50% !important;
+}
+
+.reviews .review-cards .review-card .checked{
+  color:gold;
+}
+
+.reviews .review-cards .review-card .nameRating {
+display: flex;
+justify-content: center;
+align-items: center;
 }
