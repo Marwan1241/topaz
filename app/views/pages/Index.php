@@ -34,19 +34,19 @@ class Index extends View
 
     <div class="cards">
       <div class="card crd-1">
-        <p class="card-text">Shop our products with ease</p>
+        <p class="card-text">Shop our silver rings</p>
         <button type="button" class="btn btn-light buy-btn">Buy Now</button>
       </div>
       <div class="card crd-2">
-        <p class="card-text">check out our products</p>
+        <p class="card-text">Check our silver earrings</p>
         <button type="button" class="btn btn-light buy-btn">Buy Now</button>
       </div>
       <div class="card crd-3  ">
-        <p class="card-text">check out our products</p>
+        <p class="card-text">check our silver necklaces</p>
         <button type="button" class="btn btn-light buy-btn">Buy Now</button>
       </div>
       <div class="card crd-4">
-        <p class="card-text">check out our products</p>
+        <p class="card-text">check our wedding rings</p>
         <button type="button" class="btn btn-light buy-btn">Buy Now</button>
       </div>
    
