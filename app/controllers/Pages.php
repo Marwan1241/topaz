@@ -27,4 +27,11 @@ class Pages extends Controller
         $loginView->output();
     }
 
+    public function contact(){
+        $viewPath = VIEWS_PATH . 'pages/contact.php';
+        require_once $viewPath;
+        $contactView = new Contact($this->getModel(), $this);
+        $contactView->output();
+    }
+
 }
