@@ -1,4 +1,4 @@
-<head>
+<<head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="../../public/css/navbar.css">
 </head>
@@ -14,13 +14,13 @@
           <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'public'; ?>">Home</a>
         </li>
            <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'pages/about'; ?>">About</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'views/pages/about'; ?>">About</a>
         </li>
            <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'pages/contact'; ?>">Contact Us</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'views/pages/contact'; ?>">Contact Us</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'pages/login'; ?>">Register</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'views/pages/Sign'; ?>">Register</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

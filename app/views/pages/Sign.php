@@ -1,5 +1,5 @@
 <?php
-class Login extends View
+class Sign extends view
 {
   public function output()
   {
