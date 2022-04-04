@@ -14,13 +14,13 @@
           <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'public'; ?>">Home</a>
         </li>
            <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'views/pages/about'; ?>">About</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'pages/about'; ?>">About</a>
         </li>
            <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'views/pages/contact'; ?>">Contact Us</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'pages/contact'; ?>">Contact Us</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'views/pages/Sign'; ?>">Register</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'pages/login'; ?>">Register</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

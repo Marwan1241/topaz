@@ -19,11 +19,11 @@ class Pages extends Controller
         $aboutView->output();
     }
 
-    public function Sign()
+    public function login()
     {
-        $viewPath = VIEWS_PATH . 'pages/Sign.php';
+        $viewPath = VIEWS_PATH . 'pages/login.php';
         require_once $viewPath;
-        $loginView = new Sign($this->getModel(), $this);
+        $loginView = new Login($this->getModel(), $this);
         $loginView->output();
     }
 
