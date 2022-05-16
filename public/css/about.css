@@ -1,0 +1,32 @@
+.aboutHeader{
+   padding: 5%;
+   background-color: #f8f9fac5;
+   clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% calc(100% - 60px),
+      0% 100%
+   );
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.aboutHeader h1{
+   font-size: 60px;
+   letter-spacing: 2px;
+}
+
+.aboutMain{
+   margin: 0 auto;
+   width: 60%;
+   padding: 2%;
+}
+
+.aboutMain p{
+   font-size: 40px;
+   color:white;
+   font-weight: 900;
+   text-align: center;
+}
