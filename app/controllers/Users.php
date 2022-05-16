@@ -1,10 +1,49 @@
 <?php
 class Users extends Controller
 {
-    public function register()
+  
+    public function login()
     {
-        $registerModel = $this->getModel();
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $userModel = $this->getModel();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['type']=='signin') {
+
+            require_once Util\pathBuilder('models', "LoginModel");
+            $loginModel = new LoginModel();
+            //process form
+            $loginModel->setEmail(trim($_POST['email']));
+            $loginModel->setPassword(trim($_POST['password']));
+
+            //validate login form
+            if (empty($loginModel->getEmail())) {
+                $loginModel->setEmailErr('Please enter an email');
+            } elseif (!($loginModel->emailExist($_POST['email']))) {
+                $loginModel->setEmailErr('No user found');
+            }
+
+            if (empty($loginModel->getPassword())) {
+                $loginModel->setPasswordErr('Please enter a password');
+            } elseif (strlen($loginModel->getPassword()) < 4) {
+                $loginModel->setPasswordErr('Password must contain at least 4 characters');
+            }
+
+            // If no errors
+            if (
+                empty($loginModel->getEmailErr()) &&
+                empty($loginModel->getPasswordErr())
+            ) {
+                //Check login is correct
+                $loggedUser = $loginModel->login();
+                if ($loggedUser) {
+                    //create related session variables
+                    $this->createUserSession($loggedUser);
+                    die('Success log in User');
+                } else {
+                    $loginModel->setPasswordErr('Password is not correct');
+                }
+            }
+        }elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['type']=='signup') {
+            require_once Util\pathBuilder('models', "RegisterModel");
+            $registerModel = new RegisterModel();
             // Process form
             $registerModel->setName(trim($_POST['name']));
             $registerModel->setEmail(trim($_POST['email']));
@@ -19,10 +58,12 @@ class Users extends Controller
                 $registerModel->setEmailErr('Please enter an email');
             } elseif ($registerModel->emailExist($_POST['email'])) {
                 $registerModel->setEmailErr('Email is already registered');
-            }
+            }elseif (!filter_var($registerModel->getEmail(), FILTER_VALIDATE_EMAIL)) {
+                $registerModel->setEmailErr("Invalid email format");
+              }
             if (empty($registerModel->getPassword())) {
                 $registerModel->setPasswordErr('Please enter a password');
-            } elseif (strlen($registerModel->getPassword()) < 4) {
+            } elseif (strlen($registerModel->getPassword()) < 6) {
                 $registerModel->setPasswordErr('Password must contain at least 4 characters');
             }
 
@@ -45,50 +86,6 @@ class Users extends Controller
                     redirect('users/login');
                 } else {
                     die('Error in sign up');
-                }
-            }
-        }
-        // Load form
-        //echo 'Load form, Request method: ' . $_SERVER['REQUEST_METHOD'];
-        $viewPath = VIEWS_PATH . 'users/Register.php';
-        require_once $viewPath;
-        $view = new Register($this->getModel(), $this);
-        $view->output();
-    }
-    public function login()
-    {
-        $userModel = $this->getModel();
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //process form
-            $userModel->setEmail(trim($_POST['email']));
-            $userModel->setPassword(trim($_POST['password']));
-
-            //validate login form
-            if (empty($userModel->getEmail())) {
-                $userModel->setEmailErr('Please enter an email');
-            } elseif (!($userModel->emailExist($_POST['email']))) {
-                $userModel->setEmailErr('No user found');
-            }
-
-            if (empty($userModel->getPassword())) {
-                $userModel->setPasswordErr('Please enter a password');
-            } elseif (strlen($userModel->getPassword()) < 4) {
-                $userModel->setPasswordErr('Password must contain at least 4 characters');
-            }
-
-            // If no errors
-            if (
-                empty($userModel->getEmailErr()) &&
-                empty($userModel->getPasswordErr())
-            ) {
-                //Check login is correct
-                $loggedUser = $userModel->login();
-                if ($loggedUser) {
-                    //create related session variables
-                    $this->createUserSession($loggedUser);
-                    die('Success log in User');
-                } else {
-                    $userModel->setPasswordErr('Password is not correct');
                 }
             }
         }
