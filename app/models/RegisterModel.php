@@ -6,11 +6,6 @@ class RegisterModel extends UserModel
     protected $name;
     protected $nameErr;
 
-    protected $email;
-    protected $emailErr;
-
-    protected $password;
-    protected $passwordErr;
 
     protected $confirmPassword;
     protected $confirmPasswordErr;
@@ -46,28 +41,6 @@ class RegisterModel extends UserModel
     public function setNameErr($nameErr)
     {
         $this->nameErr = $nameErr;
-    }
-
-    //Email
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    //Email error
-    public function getEmailErr()
-    {
-        return $this->emailErr;
-    }
-
-    public function setEmailErr($emailErr)
-    {
-        $this->emailErr = $emailErr;
     }
 
     //Password
