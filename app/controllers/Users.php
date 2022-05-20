@@ -93,8 +93,18 @@ class Users extends Controller
         //echo 'Load form, Request method: ' . $_SERVER['REQUEST_METHOD'];
         $viewPath = VIEWS_PATH . 'users/Login.php';
         require_once $viewPath;
-        $view = new Login($userModel, $this);
-        $view->output();
+    }
+
+    public function forgotPassword(){
+        $userModel = $this->getModel();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $msg = "First line of text\nSecond line of text";
+            $msg = wordwrap($msg,70);
+            mail("hassan1900801@miuegypt.edu.eg","My subject",$msg);
+
+        }
+        $viewPath = VIEWS_PATH . 'users/forgotPassword.php';
+        require_once $viewPath;
     }
 
     public function createUserSession($user)

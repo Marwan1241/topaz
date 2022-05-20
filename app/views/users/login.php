@@ -1,19 +1,4 @@
-<?php
-class Login extends view
-{
-  public function output()
-  {
-    $title = $this->model->title;
 
-    // $user_id = $_SESSION['user_id'];
-    // $user_name = $_SESSION['user_name'];
-
-   
-    
-
-  }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +41,11 @@ class Login extends view
 			<input type="email" name="email" placeholder="Email" />
 			<input type="password" name="password" placeholder="Password" />
 			<input type="hidden" name="type" value="signin"/>
-			<a href="#">Forgot your password?</a>
+			<?php 
+                $forgot = "<a href=".URLROOT.'users/forgotpassword'.">Forgot your password?</a>";
+                echo $forgot;
+            
+            ?>
 			<button type="submit" value="signin">Sign In</button>
 		</form>
 	</div>
