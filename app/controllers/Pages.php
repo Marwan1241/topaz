@@ -34,4 +34,18 @@ class Pages extends Controller
         $contactView->output();
     }
 
+    Public function products(){
+        $viewPath = VIEWS_PATH . 'pages/products.php';
+        require_once $viewPath;
+        $productsView = new Products($this->getModel(), $this);
+        $productsView->output();
+    }
+
+     
+    public function cart(){
+        $viewPath = VIEWS_PATH . 'pages/cart.php';
+        require_once $viewPath;
+        $contactView = new cart($this->getModel(), $this);
+        $cartView->output();
+    }
 }

@@ -5,6 +5,8 @@ class RegisterModel extends UserModel
     public  $title = 'User Registration Page';
     protected $name;
     protected $nameErr;
+
+
     protected $confirmPassword;
     protected $confirmPasswordErr;
 
@@ -29,6 +31,8 @@ class RegisterModel extends UserModel
         $this->name = $name;
     }
 
+
+    //Name Error
     public function getNameErr()
     {
         return $this->nameErr;
@@ -39,6 +43,29 @@ class RegisterModel extends UserModel
         $this->nameErr = $nameErr;
     }
 
+    //Password
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    //Password error
+    public function getPasswordErr()
+    {
+        return $this->passwordErr;
+    }
+
+    public function setPasswordErr($passwordErr)
+    {
+        $this->passwordErr = $passwordErr;
+    }
+
+    //Confirm Password
     public function getConfirmPassword()
     {
         return $this->confirmPassword;
@@ -48,6 +75,7 @@ class RegisterModel extends UserModel
         $this->confirmPassword = $confirmPassword;
     }
 
+    //Confirm Password Error
     public function getConfirmPasswordErr()
     {
         return $this->confirmPasswordErr;
