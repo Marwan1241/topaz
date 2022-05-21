@@ -1,6 +1,6 @@
-<<head>
+<head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="../../public/css/navbar.css">
+<link rel="stylesheet" href="<?php echo URLROOT; ?>css/navbar.css">
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -23,9 +23,16 @@
           <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'pages/login'; ?>">Register</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-solid fa-store">Shop</i>
+          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+         <i id="shop-btn" class="fa-solid fa-store">Shop</i>
           </a>
+          <div id="shop-menu">
+            <ul type="none">
+              <li><a href="#">Necklace</a></li>
+              <li><a href="#">Rings</a></li>
+              <li><a href="">Bracelets</a></li>
+            </ul>
+          </div>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -44,3 +51,49 @@
     </div>
   </div>
 </nav>
+
+<style>
+  #shop-menu{
+   z-index: 5;
+   position: absolute;
+   background-color: rgba(252, 218, 217 , 98%) ;
+   width: 150px;
+   padding : 20px 20px 20px 12px;
+   border-radius: 20px;
+   clip-path: polygon(
+     0% 0%,
+     0% 100%,
+     100% 100%,
+     100% 7%
+   );
+
+   display: none;
+}
+
+#shop-menu ul li a{
+     color:#5C4A5A;
+     font-size: 18px;
+     text-decoration : none;
+}
+
+#shop-menu ul li{
+     transition-duration: 0.2s;
+}
+
+#shop-menu ul li:hover{
+  transform : scale(1.2);
+}
+</style>
+
+<script>
+  var shopbtn = document.querySelector('#shop-btn');
+
+shopbtn.addEventListener("click", function(){
+  if(document.querySelector('#shop-menu').style.display == 'none'){
+    document.querySelector('#shop-menu').style.display = 'block';
+  } else {
+    document.querySelector('#shop-menu').style.display = 'none';
+  }
+});
+
+</script>

@@ -26,7 +26,7 @@ class Login extends view
    <title>Register</title>
 </head>
 <body>
-   <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
+   <h2><b>Register or Login on Topaz</b></h2>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form action="#">
@@ -67,7 +67,7 @@ class Login extends view
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
+				<p>Enter your personal details and start shopping now</p>
 				<button class="ghost" id="signUp">Sign Up</button>
 			</div>
 		</div>
