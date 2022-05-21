@@ -43,7 +43,12 @@
         <ul>
         </ul>
       </ul>
-    <i class="nav-link fa-solid fa-cart-shopping">Cart</i>
+      <a><i id="cart-btn" class="nav-link fa-solid fa-cart-shopping">Cart</i></a>
+
+          <div id="cart-menu">
+            <ul type="none">
+            </ul>
+          </div>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -53,7 +58,11 @@
 </nav>
 
 <style>
-  #shop-menu{
+  #shop-menu , #cart-menu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
    z-index: 5;
    position: absolute;
    background-color: rgba(252, 218, 217 , 98%) ;
@@ -68,6 +77,14 @@
    );
 
    display: none;
+}
+
+#cart-menu{
+  margin : 86px 0 0 65%;
+}
+
+#cart-btn:hover{
+  cursor : pointer;
 }
 
 #shop-menu ul li a{
@@ -87,12 +104,21 @@
 
 <script>
   var shopbtn = document.querySelector('#shop-btn');
+  var cartbtn = document.querySelector('#cart-btn');
 
 shopbtn.addEventListener("click", function(){
   if(document.querySelector('#shop-menu').style.display == 'none'){
     document.querySelector('#shop-menu').style.display = 'block';
   } else {
     document.querySelector('#shop-menu').style.display = 'none';
+  }
+});
+
+cartbtn.addEventListener("click", function(){
+  if(document.querySelector('#cart-menu').style.display == 'none'){
+    document.querySelector('#cart-menu').style.display = 'block';
+  } else {
+    document.querySelector('#cart-menu').style.display = 'none';
   }
 });
 
