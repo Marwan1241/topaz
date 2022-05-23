@@ -50,7 +50,12 @@ class CartModel extends model {
     }
  
     public function SaveCart($cartId,$productId){
-        //TODO save cart to database
+        $this->dbh->query('SELECT * from cart');
+        $record = $this->dbh->resultSet();
+        $this->cart = $record;
+    }
+
+
 
 
     }
