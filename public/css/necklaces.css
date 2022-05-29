@@ -1,0 +1,27 @@
+body{
+   background: rgb(254, 213, 221);
+      background: linear-gradient(90deg, rgba(254, 213, 221, 1) 0%, rgba(254, 213, 221, 1) 21%, rgba(254, 213, 221, 1) 35%, rgba(255, 255, 255, 1) 100%);
+}
+
+h1{
+   font-size: 60px;
+   font-weight: 900;
+}
+
+.product-img{
+   width: 50%;
+}
+
+.product-name{
+   font-size: 40px;
+   font-weight: 800;
+}
+
+.product-desc{
+   font-size: 20px;
+}
+
+.product-price{
+   font-size: 30px;
+   font-weight: 900;
+}

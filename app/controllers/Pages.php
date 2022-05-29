@@ -55,4 +55,11 @@ class Pages extends Controller
         $adminView = new admin($this->getModel(), $this);
         $adminView->output();
     }
+
+        Public function necklaces(){
+        $viewPath = VIEWS_PATH . 'pages/necklaces.php';
+        require_once $viewPath;
+        $necklacesView = new Necklaces($this->getModel(), $this);
+        $necklacesView->output();
+    }
 }

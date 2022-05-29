@@ -23,11 +23,11 @@
           <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
          <i id="shop-btn" class="fa-solid fa-store">Shop</i>
           </a>
-          <div id="shop-menu">
+          <div id="shop-menu">  
             <ul type="none">
-              <li><a href="#">Necklace</a></li>
-              <li><a href="#">Rings</a></li>
-              <li><a href="">Bracelets</a></li>
+              <li><a href="<?php echo URLROOT . 'pages/necklaces'; ?>">Necklace</a></li>
+              <li><a href="<?php echo URLROOT . 'pages/rings'; ?>">Rings</a></li>
+              <li><a href="<?php echo URLROOT . 'pages/bracelets'; ?>">Bracelets</a></li>
             </ul>
           </div>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -44,6 +44,7 @@
 
           <div id="cart-menu">
             <ul type="none">
+              <li></li>
             </ul>
           </div>
       <form class="d-flex">
