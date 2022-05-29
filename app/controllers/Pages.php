@@ -46,6 +46,13 @@ class Pages extends Controller
         $viewPath = VIEWS_PATH . 'pages/cart.php';
         require_once $viewPath;
         $contactView = new cart($this->getModel(), $this);
-        $cartView->output();
+        $contactView->output();
+    }
+
+    public function admin(){
+        $viewPath = VIEWS_PATH . 'admin-panel/index.php';
+        require_once $viewPath;
+        $adminView = new admin($this->getModel(), $this);
+        $adminView->output();
     }
 }
