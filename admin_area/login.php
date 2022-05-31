@@ -55,7 +55,7 @@ $admin_email = mysqli_real_escape_string($con,$_POST['admin_email']);
 
 $admin_pass = mysqli_real_escape_string($con,$_POST['admin_pass']);
 
-$get_admin = "select * from admins where admin_email='$admin_email' AND admin_pass='$admin_pass'";
+$get_admin = "select * from admin where email='$admin_email' AND password='$admin_pass'";
 
 $run_admin = mysqli_query($con,$get_admin);
 

@@ -91,19 +91,6 @@ else {
 
 </li><!-- li Ends -->
 
-<li><!-- li Starts -->
-
-<a href="index.php?view_p_cats" >
-
-<i class="fa fa-fw fa-gear" ></i> Product Categories
-
-<span class="badge" ><?php echo $count_p_categories; ?></span>
-
-
-</a>
-
-</li><!-- li Ends -->
-
 <li class="divider"></li>
 
 <li><!-- li Starts -->
@@ -158,83 +145,6 @@ else {
 
 </li><!-- Products li Ends -->
 
-<li><!-- Live Chat li Starts -->
-
-<a href="../live-chat/index.php" data-toggle="collapse" data-target="#Live Chat">
-
-<i class="fa fa-fw fa-comment"></i> Live Chat
-
-
-</a>
-
-</li><!-- Live Chat li Ends -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li><!-- manufacturer li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#manufacturers"><!-- anchor Starts -->
-
-<i class="fa fa-fw fa-briefcase"></i> Manufacturers
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-
-</a><!-- anchor Ends -->
-
-<ul id="manufacturers" class="collapse"><!-- ul collapse Starts -->
-
-<li>
-<a href="index.php?insert_manufacturer"> Insert Manufacturer </a>
-</li>
-
-<li>
-<a href="index.php?view_manufacturers"> View Manufacturers </a>
-</li>
-
-</ul><!-- ul collapse Ends -->
-
-
-</li><!-- manufacturer li Ends -->
-
-
-<li><!-- li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#p_cat">
-
-<i class="fa fa-fw fa-pencil"></i> Products Categories
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-
-</a>
-
-<ul id="p_cat" class="collapse">
-
-<li>
-<a href="index.php?insert_p_cat"> Insert Product Category </a>
-</li>
-
-<li>
-<a href="index.php?view_p_cats"> View Products Categories </a>
-</li>
-
-
-</ul>
-
-</li><!-- li Ends -->
 
 
 <li><!-- li Starts -->
@@ -263,7 +173,15 @@ else {
 </li><!-- li Ends -->
 
 
+<li>
 
+<a href="index.php?view_customers">
+
+<i class="fa fa-fw fa-edit"></i> View Customers
+
+</a>
+
+</li>
 
 
 
@@ -309,15 +227,7 @@ else {
 
 
 
-<li>
 
-<a href="index.php?view_customers">
-
-<i class="fa fa-fw fa-edit"></i> View Customers
-
-</a>
-
-</li>
 
 <li>
 

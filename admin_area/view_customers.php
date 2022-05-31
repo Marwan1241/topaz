@@ -60,9 +60,8 @@ else {
 <th>Name</th>
 <th>Email</th>
 <th>Image</th>
-<th>Country</th>
-<th>City</th>
-<th>Phone Number</th>
+<th>phone number</th>
+<th>Address</th>
 <th>Delete</th>
 
 
@@ -77,25 +76,23 @@ else {
 
 $i=0;
 
-$get_c = "select * from customers";
+$get_c = "select * from users";
 
 $run_c = mysqli_query($con,$get_c);
 
 while($row_c=mysqli_fetch_array($run_c)){
 
-$c_id = $row_c['customer_id'];
+$c_id = $row_c['UserID'];
 
-$c_name = $row_c['customer_name'];
+$c_name = $row_c['name'];
 
-$c_email = $row_c['customer_email'];
+$c_email = $row_c['email'];
 
-$c_image = $row_c['customer_image'];
+$c_image = $row_c['Image'];
 
-$c_country = $row_c['customer_country'];
+$c_country = $row_c['phoneNumber'];
 
-$c_city = $row_c['customer_city'];
-
-$c_contact = $row_c['customer_contact'];
+$c_city = $row_c['address'];
 
 $i++;
 
@@ -112,13 +109,12 @@ $i++;
 
 <td><?php echo $c_email; ?></td>
 
-<td><img src="../customer/customer_images/<?php echo $c_image; ?>" width="60" height="60" ></td>
+<td><img src="<?php echo $c_image; ?>" width="60" height="60" ></td>
 
 <td><?php echo $c_country; ?></td>
 
 <td><?php echo $c_city; ?></td>
 
-<td><?php echo $c_contact; ?></td>
 
 <td>
 

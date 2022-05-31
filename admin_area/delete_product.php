@@ -14,11 +14,11 @@ else {
 
 <?php
 
-if(isset($_GET['delete_manufacturer'])){
+if(isset($_GET['delete_product'])){
 
-$delete_id = $_GET['delete_manufacturer'];
+$delete_id = $_GET['delete_product'];
 
-$delete_manufacturer = "delete from manufacturers where manufacturer_id='$delete_id'";
+$delete_manufacturer = "delete from products where productID='$delete_id'";
 
 $run_manufacturer = mysqli_query($con,$delete_manufacturer);
 

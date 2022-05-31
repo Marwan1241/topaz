@@ -58,12 +58,10 @@ else {
 
 <tr>
 <th>#</th>
-<th>Title</th>
+<th>Name</th>
 <th>Image</th>
 <th>Price</th>
-<th>Sold</th>
-<th>Keywords</th>
-<th>Date</th>
+<th>Type</th>
 <th>Delete</th>
 <th>Edit</th>
 
@@ -79,23 +77,21 @@ else {
 
 $i = 0;
 
-$get_pro = "select * from products where status='product'";
+$get_pro = "select * from products";
 
 $run_pro = mysqli_query($con,$get_pro);
 
 while($row_pro=mysqli_fetch_array($run_pro)){
 
-$pro_id = $row_pro['product_id'];
+$pro_id = $row_pro['productID'];
 
-$pro_title = $row_pro['product_title'];
+$pro_title = $row_pro['name'];
 
-$pro_image = $row_pro['product_img1'];
+$pro_image = $row_pro['image'];
 
-$pro_price = $row_pro['product_price'];
+$pro_price = $row_pro['price'];
 
-$pro_keywords = $row_pro['product_keywords'];
-
-$pro_date = $row_pro['date'];
+$pro_type = $row_pro['type'];
 
 $i++;
 
@@ -107,23 +103,22 @@ $i++;
 
 <td><?php echo $pro_title; ?></td>
 
-<td><img src="product_images/<?php echo $pro_image; ?>" width="60" height="60"></td>
+<td><img src="<?php echo $pro_image; ?>" width="60" height="60"></td>
 
 <td>$ <?php echo $pro_price; ?></td>
 
-<td>
+<!-- <td> -->
 <?php
 
-$get_sold = "select * from pending_orders where product_id='$pro_id'";
-$run_sold = mysqli_query($con,$get_sold);
-$count = mysqli_num_rows($run_sold);
-echo $count;
+// $get_sold = "select * from pending_orders where product_id='$pro_id'";
+// $run_sold = mysqli_query($con,$get_sold);
+// $count = mysqli_num_rows($run_sold);
+// echo $count;
 ?>
-</td>
+<!-- </td> -->
 
-<td> <?php echo $pro_keywords; ?> </td>
+<td> <?php echo $pro_type; ?> </td>
 
-<td><?php echo $pro_date; ?></td>
 
 <td>
 
