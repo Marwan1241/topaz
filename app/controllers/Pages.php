@@ -56,10 +56,28 @@ class Pages extends Controller
         $adminView->output();
     }
 
-        Public function necklaces(){
+    Public function necklaces(){
         $viewPath = VIEWS_PATH . 'pages/necklaces.php';
         require_once $viewPath;
         $necklacesView = new Necklaces($this->getModel(), $this);
         $necklacesView->output();
     }
+    Public function rings(){
+      $viewPath = VIEWS_PATH . 'pages/rings.php';
+      require_once $viewPath;
+      $necklacesView = new Rings($this->getModel(), $this);
+      $necklacesView->output();
+  }
+  Public function bracelets(){
+    $viewPath = VIEWS_PATH . 'pages/bracelets.php';
+    require_once $viewPath;
+    $necklacesView = new Bracelets($this->getModel(), $this);
+    $necklacesView->output();
+  }
+  Public function earrings(){
+    $viewPath = VIEWS_PATH . 'pages/earrings.php';
+    require_once $viewPath;
+    $necklacesView = new Earrings($this->getModel(), $this);
+    $necklacesView->output();
+  }
 }

@@ -147,6 +147,30 @@ else {
 
 
 
+<li>
+
+<a href="index.php?view_customers">
+
+<i class="fa fa-fw fa-edit"></i> View Customers
+
+</a>
+
+</li>
+
+
+
+
+<li>
+
+<a href="index.php?view_orders">
+
+<i class="fa fa-fw fa-list"></i> View Orders
+
+</a>
+
+</li>
+
+
 <li><!-- li Starts -->
 
 <a href="#" data-toggle="collapse" data-target="#cat">
@@ -172,16 +196,6 @@ else {
 
 </li><!-- li Ends -->
 
-
-<li>
-
-<a href="index.php?view_customers">
-
-<i class="fa fa-fw fa-edit"></i> View Customers
-
-</a>
-
-</li>
 
 
 
@@ -221,33 +235,6 @@ else {
 
 
 
-
-
-
-
-
-
-
-
-<li>
-
-<a href="index.php?view_orders">
-
-<i class="fa fa-fw fa-list"></i> View Orders
-
-</a>
-
-</li>
-
-<li>
-
-<a href="index.php?view_payments">
-
-<i class="fa fa-fw fa-pencil"></i> View Payments
-
-</a>
-
-</li>
 
 <li><!-- li Starts -->
 

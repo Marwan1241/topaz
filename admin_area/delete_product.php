@@ -18,14 +18,14 @@ if(isset($_GET['delete_product'])){
 
 $delete_id = $_GET['delete_product'];
 
-$delete_manufacturer = "delete from products where productID='$delete_id'";
+$delete_product = "delete from products where productID='$delete_id'";
 
-$run_manufacturer = mysqli_query($con,$delete_manufacturer);
+$run_product = mysqli_query($con,$delete_product);
 
-if($run_manufacturer){
+if($run_product){
 
-echo "<script>alert('One Manufacturer Has Been Deleted')</script>";
-echo "<script>window.open('index.php?view_manufacturers','_self')</script>";
+echo "<script>alert('One products Has Been Deleted')</script>";
+echo "<script>window.open('index.php?view_products','_self')</script>";
 
 }
 

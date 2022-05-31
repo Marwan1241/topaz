@@ -58,15 +58,14 @@ else {
 <tr>
 
 <th>#</th>
-<th>Customer</th>
-<th>Invoice</th>
-<th>Product</th>
+<th>Customer Email</th>
 <th>Qty</th>
-<th>Size</th>
-<th>Order Date</th>
-<th>Total Amount</th>
+<th>shipping Price</th>
+<th>Total Price</th>
+<th>creation Date</th>
+<th>delivery Date</th>
 <th>Status</th>
-<th>Action</th>
+<th>Delete</th>
 
 
 </tr>
@@ -80,33 +79,25 @@ else {
 
 $i = 0;
 
-$get_orders = "select * from pending_orders";
+$get_orders = "select * from orders";
 
 $run_orders = mysqli_query($con,$get_orders);
 
 while ($row_orders = mysqli_fetch_array($run_orders)) {
 
-$order_id = $row_orders['order_id'];
+$order_id = $row_orders['orderID'];
 
-$c_id = $row_orders['customer_id'];
+$user_email = $row_orders['user_email'];
 
-$invoice_no = $row_orders['invoice_no'];
+$creation_date = $row_orders['creationDate'];
 
-$product_id = $row_orders['product_id'];
-
-$qty = $row_orders['qty'];
-
-$size = $row_orders['size'];
+$delivery_date = $row_orders['deliveryDate'];
 
 $order_status = $row_orders['order_status'];
 
-$get_products = "select * from products where product_id='$product_id'";
-
-$run_products = mysqli_query($con,$get_products);
-
-$row_products = mysqli_fetch_array($run_products);
-
-$product_title = $row_products['product_title'];
+$qty = $row_orders['quantity'];
+$shipping_price = $row_orders['shippingPrice'];
+$due_amount = $row_orders['totalPrice'];
 
 $i++;
 
@@ -114,51 +105,23 @@ $i++;
 
 <tr>
 
-<td><?php echo $i; ?></td>
+<td><?php echo $order_id; ?></td>
 
-<td>
-<?php 
-
-$get_customer = "select * from customers where customer_id='$c_id'";
-
-$run_customer = mysqli_query($con,$get_customer);
-
-$row_customer = mysqli_fetch_array($run_customer);
-
-$customer_email = $row_customer['customer_email'];
-
-echo $customer_email;
-
- ?>
- </td>
-
-<td bgcolor="orange" ><?php echo $invoice_no; ?></td>
-
-<td><?php echo $product_title; ?></td>
+<td><?php echo $user_email;?></td>
 
 <td><?php echo $qty; ?></td>
 
-<td><?php echo $size; ?></td>
-
-<td>
-<?php
-
-$get_customer_order = "select * from customer_orders where order_id='$order_id'";
-
-$run_customer_order = mysqli_query($con,$get_customer_order);
-
-$row_customer_order = mysqli_fetch_array($run_customer_order);
-
-$order_date = $row_customer_order['order_date'];
-
-$due_amount = $row_customer_order['due_amount'];
-
-echo $order_date;
-
-?>
-</td>
+<td><?php echo $shipping_price; ?></td>
 
 <td>$<?php echo $due_amount; ?></td>
+
+
+<!-- <td><?php //echo $product_title; ?></td> -->
+
+<td><?php echo $creation_date;?></td>
+
+<td><?php echo $delivery_date;?></td>
+
 
 <td>
 <?php

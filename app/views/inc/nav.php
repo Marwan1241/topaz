@@ -17,7 +17,7 @@
           <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'pages/contact'; ?>">Contact Us</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'pages/login'; ?>">Register</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo URLROOT . 'users/login'; ?>">Register</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,6 +28,7 @@
               <li><a href="<?php echo URLROOT . 'pages/necklaces'; ?>">Necklace</a></li>
               <li><a href="<?php echo URLROOT . 'pages/rings'; ?>">Rings</a></li>
               <li><a href="<?php echo URLROOT . 'pages/bracelets'; ?>">Bracelets</a></li>
+              <li><a href="<?php echo URLROOT . 'pages/earrings'; ?>">earrings</a></li>
             </ul>
           </div>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

@@ -1,6 +1,6 @@
 <?php
 
-class Necklaces extends view
+class Bracelets extends view
 {
 
   public function output()
@@ -22,7 +22,7 @@ class Necklaces extends view
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="<?php echo URLROOT; ?>css/necklaces.css">
-   <title>Necklaces</title>
+   <title>Bracelets</title>
 </head>
 <body>
 <?php  
@@ -48,5 +48,9 @@ class Necklaces extends view
                 }
              ?>
         </table>
+
+    <?php
+    require APPROOT . '/views/inc/footer.php';
+    ?>
 </body>
 </html>
