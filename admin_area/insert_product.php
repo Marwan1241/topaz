@@ -104,7 +104,7 @@ else {
 
 <?php
 
-$categories = array('ring','necklace','earrings','braclets');
+$categories = array('rings','necklaces','earrings','bracelets');
 foreach($categories as $category){
 
 echo "<option value='$category'>

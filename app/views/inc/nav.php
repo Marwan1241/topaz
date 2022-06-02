@@ -42,11 +42,95 @@
         </ul>
       </ul>
       <a><i id="cart-btn" class="nav-link fa-solid fa-cart-shopping">Cart</i></a>
-
           <div id="cart-menu">
-            <ul type="none">
-              <li></li>
-            </ul>
+            <table type="none">              
+              <thead>
+              <tr>
+              <th>Name</th>
+              <th>Image</th>
+              <th>Price</th>
+              <th>Delete</th>
+              </tr>
+              </thead>
+              <tbody>
+
+              <?php
+
+                $i = 0;
+                $email =$_SESSION['email'];
+                $con = mysqli_connect("localhost","root","","topaz");
+
+                $get_pro = "select * from cart where userEmail='$email'";
+                $pds = '';
+                $result = $con->query($get_pro);
+                if ($result->num_rows > 0) {
+                  // output data of each row
+                  while($row = $result->fetch_assoc()) {
+                    $pds = $row['productID'];
+                  }
+              }
+                $pds = unserialize($pds);
+                if($pds){
+                foreach($pds as $id){
+                  $get_product = "Select * from products where productID='$id'";
+                  $result = $con->query($get_product);
+
+                
+                while($row=mysqli_fetch_array($result)){
+
+                $pro_id = $row['productID'];
+                
+                $pro_title = $row['name'];
+
+                $pro_image = $row['image'];
+
+                $pro_price = $row['price'];
+
+                $pro_type = $row['type'];
+
+                $i++;
+
+                ?>
+
+                <tr>
+
+
+                <td><?php echo $pro_title; ?></td>
+
+                <td><img src="<?php echo $pro_image; ?>" width="60" height="60"></td>
+
+                <td>$ <?php echo $pro_price; ?></td>
+
+                <!-- <td> -->
+                <?php
+
+                // $get_sold = "select * from pending_orders where product_id='$pro_id'";
+                // $run_sold = mysqli_query($con,$get_sold);
+                // $count = mysqli_num_rows($run_sold);
+                // echo $count;
+                ?>
+                <!-- </td> -->
+
+
+
+                <td>
+
+                <a href="<?php echo URLROOT.'pages/?remove='.$pro_id."&price=".$pro_price ?>">
+
+                <i class="fa fa-trash-o"> </i> remove
+
+                </a>
+
+                </td>
+                </tr>
+
+                <?php } }}?>
+
+
+
+              </tbody>
+
+            </table>
           </div>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

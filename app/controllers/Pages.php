@@ -5,9 +5,14 @@ class Pages extends Controller
 
     public function index()
     {
+        $model = $this->getModel();
+        if(isset($_GET['remove'])){
+            $model->deleteFromCart($_GET['remove'],$_GET['price']);
+            
+        }
         $viewPath = VIEWS_PATH . 'pages/Index.php';
         require_once $viewPath;
-        $indexView = new Index($this->getModel(), $this);
+        $indexView = new Index($model, $this);
         $indexView->output();
     }
 
@@ -57,27 +62,43 @@ class Pages extends Controller
     }
 
     Public function necklaces(){
+        $model = $this->getModel();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+            echo $model->addToCart($_POST['index'],$_POST['price']);
+        }
         $viewPath = VIEWS_PATH . 'pages/necklaces.php';
         require_once $viewPath;
-        $necklacesView = new Necklaces($this->getModel(), $this);
+        $necklacesView = new Necklaces($model, $this);
         $necklacesView->output();
     }
     Public function rings(){
+        $model = $this->getModel();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+            echo $model->addToCart($_POST['index'],$_POST['price']);
+        }
       $viewPath = VIEWS_PATH . 'pages/rings.php';
       require_once $viewPath;
-      $necklacesView = new Rings($this->getModel(), $this);
+      $necklacesView = new Rings($model, $this);
       $necklacesView->output();
   }
   Public function bracelets(){
+    $model = $this->getModel();
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        echo $model->addToCart($_POST['index'],$_POST['price']);
+    }
     $viewPath = VIEWS_PATH . 'pages/bracelets.php';
     require_once $viewPath;
-    $necklacesView = new Bracelets($this->getModel(), $this);
+    $necklacesView = new Bracelets($model, $this);
     $necklacesView->output();
   }
   Public function earrings(){
+    $model = $this->getModel();
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        echo $model->addToCart($_POST['index'],$_POST['price']);
+    }
     $viewPath = VIEWS_PATH . 'pages/earrings.php';
     require_once $viewPath;
-    $necklacesView = new Earrings($this->getModel(), $this);
+    $necklacesView = new Earrings($model, $this);
     $necklacesView->output();
   }
 }

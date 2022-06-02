@@ -87,10 +87,19 @@ class RegisterModel extends UserModel
 
     public function signup()
     {
+        
+
+        $this->dbh->query("INSERT INTO `cart`(`productID`, `qauntity`, `shippingPrice`, `totalPrice`,`userEmail`) VALUES ('','','50','50',:email)");
+        $this->dbh->bind(':email', $this->email);
+        $this->dbh->execute();
+
         $this->dbh->query("INSERT INTO users (`name`, `email`, `password`,`Image`) VALUES(:uname, :email, :pass,'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png')");
         $this->dbh->bind(':uname', $this->name);
         $this->dbh->bind(':email', $this->email);
         $this->dbh->bind(':pass', $this->password);
+
+
+
 
         return $this->dbh->execute();
     }

@@ -1,20 +1,3 @@
-<?php
-
-class Rings extends view
-{
-
-  public function output()
-  {
-    $title = $this->model->title;
-
-  }
-}
-// $sql = "SELECT * FROM necklaces ORDER BY names DESC ";
-// $result = $mysqli->query($sql);
-// $mysqli->close(); 
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,29 +7,63 @@ class Rings extends view
      <link rel="stylesheet" href="<?php echo URLROOT; ?>css/necklaces.css">
    <title>Rings</title>
 </head>
-<body>
-<?php  
-  require APPROOT . '/views/inc/header.php'; 
-  ?>
+
+
+<?php
+    require APPROOT . '/views/inc/header.php'; 
+
+
+class Rings extends view
+{
+
+  public function output()
+  {
+    $bracelets = $this->model->init();
+
+    $page = <<<EOD
+    <body>
    <h1>THE BEST DEALS <br> IN THIS SEASON</h1>
    <hr>
    <table>
-        <!-- PHP CODE TO FETCH DATA FROM ROWS-->
-            <?php   // LOOP TILL END OF DATA
-                while($rows=$result->fetch_assoc())
-                {
-             ?>
+   EOD;
+   $URLroot = URLROOT;
+   $rows = '';
+    for($i = 0; $i < count((array)$bracelets) ; $i++)
+    {
+      $image = $bracelets[$i]->image;
+      $name = $bracelets[$i]->name;
+      $description = $bracelets[$i]->description;
+      $price = $bracelets[$i]->price;
+      $id = $bracelets[$i]->productID;
+          $new_row =<<<EOD
             <tr>
-                <!--FETCHING DATA FROM EACH ROW OF EVERY COLUMN-->
-                <td class="product-image"><?php echo $rows['product-img'];?></td>
-                <td class="product-name"><?php echo $rows['product-name'];?></td>
-                <td class="product-desc"><?php echo $rows['product-desc'];?></td>
-                <td class="product-price"> $ <?php echo $rows['product-price'];?></td>
+              <form method="post" action="$URLroot/pages/rings">
+                <td class="product-image"><img src="$image"></td>
+                <td class="product-name">$name</td>
+                <td class="product-desc">$description</td>
+                <td class="product-price"> $ $price</td>
+                <input type="hidden" name="index" value=$id />
+                <input type="hidden" name="price" value=$price />
+                <button type="submit">Add To Cart </button>
+              </form>
             </tr>
-            
-            <?php
-                }
-             ?>
-        </table>
+            EOD;
+      $rows= $rows.$new_row;
+    }
+    echo $page;
+    echo $rows;
+
+  }
+
+}
+// $sql = "SELECT * FROM necklaces ORDER BY names DESC ";
+// $result = $mysqli->query($sql);
+// $mysqli->close(); 
+?>
+</table>
+
+<!-- <?php //require APPROOT . '/views/inc/footer.php'; ?> -->
 </body>
 </html>
+
+ 

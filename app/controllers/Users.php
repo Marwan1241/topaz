@@ -111,6 +111,7 @@ class Users extends Controller
     {
         $_SESSION['user_id'] = $user->id;
         $_SESSION['user_name'] = $user->name;
+        $_SESSION['email'] = $user->email;
         //header('location: ' . URLROOT . 'pages');
         redirect('pages');
     }
