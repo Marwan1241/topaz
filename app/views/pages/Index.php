@@ -34,20 +34,20 @@ class Index extends View
 
     <div class="cards">
       <div class="card crd-1">
-        <p class="card-text">Shop our silver rings</p>
-        <button type="button" class="btn btn-light buy-btn">Buy Now</button>
+        <p class="card-text">Shop our silver bracelets</p>
+        <button type="button" class="btn btn-light buy-btn" id="bracelets">Buy Now</button>
       </div>
       <div class="card crd-2">
         <p class="card-text">Check our silver earrings</p>
-        <button type="button" class="btn btn-light buy-btn">Buy Now</button>
+        <button type="button" class="btn btn-light buy-btn" id="earrings">Buy Now</button>
       </div>
       <div class="card crd-3  ">
         <p class="card-text">check our silver necklaces</p>
-        <button type="button" class="btn btn-light buy-btn">Buy Now</button>
+        <button type="button" class="btn btn-light buy-btn" id="necklaces">Buy Now</button>
       </div>
       <div class="card crd-4">
         <p class="card-text">check our wedding rings</p>
-        <button type="button" class="btn btn-light buy-btn">Buy Now</button>
+        <button type="button" class="btn btn-light buy-btn" id="rings">Buy Now</button>
       </div>
    
     </div>
@@ -120,6 +120,19 @@ class Index extends View
        </div>
 
   </div>
-  
+  <script type="text/javascript">
+    document.getElementById("rings").onclick = function () {
+        location.href = "<?php echo URLROOT.'pages/rings' ?>";
+    };
+    document.getElementById("bracelets").onclick = function () {
+        location.href = "<?php echo URLROOT.'pages/bracelets' ?>";
+    };
+    document.getElementById("earrings").onclick = function () {
+        location.href = "<?php echo URLROOT.'pages/earrings' ?>";
+    };
+    document.getElementById("necklaces").onclick = function () {
+        location.href = "<?php echo URLROOT.'pages/necklaces' ?>";
+    };
+</script>
 </body>
 </html>
