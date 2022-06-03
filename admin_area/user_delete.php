@@ -17,7 +17,7 @@ if(isset($_GET['user_delete'])){
 
 $delete_id = $_GET['user_delete'];
 
-$delete_user = "delete from admins where admin_id='$delete_id'";
+$delete_user = "delete from admin where adminID='$delete_id'";
 
 $run_delete = mysqli_query($con,$delete_user);
 

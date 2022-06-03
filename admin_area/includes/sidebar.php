@@ -250,15 +250,11 @@ else {
 <ul id="users" class="collapse">
 
 <li>
-<a href="index.php?insert_user"> Insert User </a>
+<a href="index.php?insert_user"> Insert admin </a>
 </li>
 
 <li>
-<a href="index.php?view_users"> View Users </a>
-</li>
-
-<li>
-<a href="index.php?user_profile=<?php echo $admin_id; ?>"> Edit Profile </a>
+<a href="index.php?view_users"> View admin </a>
 </li>
 
 </ul>

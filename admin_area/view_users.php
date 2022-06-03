@@ -67,8 +67,6 @@ else {
 
 <th>Country</th>
 
-<th>Job</th>
-
 <th>Delete</th>
 
 
@@ -80,27 +78,21 @@ else {
 
 <?php
 
-$get_admin = "select * from admins";
+$get_admin = "select * from admin";
 
 $run_admin = mysqli_query($con,$get_admin);
 
 while($row_admin = mysqli_fetch_array($run_admin)){
 
-$admin_id = $row_admin['admin_id'];
+$admin_id = $row_admin['adminID'];
 
-$admin_name = $row_admin['admin_name'];
+$admin_name = $row_admin['name'];
 
-$admin_email = $row_admin['admin_email'];
+$admin_email = $row_admin['email'];
 
-$admin_image = $row_admin['admin_image'];
+$admin_image = $row_admin['image'];
 
-$admin_country = $row_admin['admin_country'];
-
-$admin_job = $row_admin['admin_job'];
-
-
-
-
+$admin_country = $row_admin['country'];
 
 ?>
 
@@ -114,7 +106,6 @@ $admin_job = $row_admin['admin_job'];
 
 <td><?php echo $admin_country; ?></td>
 
-<td><?php echo $admin_job; ?></td>
 
 <td>
 
