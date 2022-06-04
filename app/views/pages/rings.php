@@ -38,7 +38,7 @@ class Rings extends view
           $new_row =<<<EOD
             <tr>
               <form method="post" action="$URLroot/pages/rings">
-                <td class="product-image"><img src="$image"></td>
+                <td class="product-img"><img src="$image"></td>
                 <td class="product-name">$name</td>
                 <td class="product-desc">$description</td>
                 <td class="product-price"> $ $price</td>
