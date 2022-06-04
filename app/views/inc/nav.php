@@ -4,7 +4,7 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="<?php echo URLROOT; ?>">Topaz</a>
+    <a class="navbar-brand" href="<?php echo URLROOT; ?>"><img style="width:20%; margin-right: -100px" src="<?php echo URLROOT . 'logo.png'; ?>" alt="topaz logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
