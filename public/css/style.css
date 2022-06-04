@@ -61,6 +61,8 @@ position: relative;
 
 .card:hover {
   transform: scale(1.1);
+  filter: drop-shadow(0 0 0.90rem rgb(77, 77, 77));
+  
 }
 
 .crd-1 {
