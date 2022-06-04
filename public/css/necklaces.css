@@ -9,7 +9,13 @@ h1{
 }
 
 .product-img{
-   width: 30%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.product-img img{
+   width : 70%;
 }
 
 .product-name{
@@ -31,4 +37,22 @@ tr{
    justify-content: center;
    align-items: center;
    flex-direction: column;
+}
+
+.add-to-cart{
+   padding: 13px;
+   border: 0px solid transparent;
+   border-radius: 20px;
+
+   background-color: #5c4a5a;
+   color: white;
+
+   font-family: sans-serif;
+
+   transition-duration: 0.5s;
+}
+
+.add-to-cart:hover{
+   transform: scale(1.1);
+   filter: drop-shadow(0 0 0.90rem rgb(77, 77, 77));
 }

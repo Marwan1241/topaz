@@ -38,13 +38,13 @@ class Earrings extends view
           $new_row =<<<EOD
             <tr>
               <form method="post" action="$URLroot/pages/earrings">
-                <td class="product-image"><img src="$image"></td>
+                <td class="product-img"><img src="$image"></td>
                 <td class="product-name">$name</td>
                 <td class="product-desc">$description</td>
                 <td class="product-price"> $ $price</td>
                 <input type="hidden" name="index" value=$id />
                 <input type="hidden" name="price" value=$price />
-                <button type="submit">Add To Cart </button>
+                <td><button class="add-to-cart"type="submit">Add To Cart </button></td>
               </form>
             </tr>
             EOD;

@@ -36,18 +36,18 @@ class Rings extends view
       $price = $bracelets[$i]->price;
       $id = $bracelets[$i]->productID;
           $new_row =<<<EOD
-          <form method="post" action="$URLroot/pages/rings">
             <tr>
-                <td><img class="product-img" src="$image"></td>
+              <form method="post" action="$URLroot/pages/rings">
+                <td class="product-img"><img src="$image"></td>
                 <td class="product-name">$name</td>
                 <td class="product-desc">$description</td>
                 <td class="product-price"> $ $price</td>
                 <input type="hidden" name="index" value=$id />
                 <input type="hidden" name="price" value=$price />
-                <button type="submit">Add To Cart </button>
+                <td><button class="add-to-cart"type="submit">Add To Cart </button></td>
+              </form>
             </tr>
-            </form>
-          EOD;
+            EOD;
       $rows= $rows.$new_row;
     }
     echo $page;
