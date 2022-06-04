@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2022 at 06:08 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jun 04, 2022 at 06:23 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.4.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,15 +33,17 @@ CREATE TABLE `admin` (
   `name` varchar(100) NOT NULL,
   `image` varchar(100) NOT NULL,
   `country` varchar(20) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `adminID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`email`, `authority`, `name`, `image`, `country`, `password`) VALUES
-('baher@email.com', 1, 'baher', 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png', 'Egypt', '1234567');
+INSERT INTO `admin` (`email`, `authority`, `name`, `image`, `country`, `password`, `adminID`) VALUES
+('baher@email.com', 1, 'baher', 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png', 'Egypt', '1234567', 1),
+('omar@email.com', 2, 'omar', 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png', 'egypt', '123456', 3);
 
 -- --------------------------------------------------------
 
@@ -54,8 +56,17 @@ CREATE TABLE `cart` (
   `qauntity` int(11) NOT NULL,
   `shippingPrice` double NOT NULL,
   `totalPrice` double NOT NULL,
-  `cartID` int(11) NOT NULL
+  `cartID` int(11) NOT NULL,
+  `userEmail` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`productID`, `qauntity`, `shippingPrice`, `totalPrice`, `cartID`, `userEmail`) VALUES
+('a:1:{i:1;s:1:\"6\";}', 1, 50, 650, 1, 'hassan@email.com'),
+('a:1:{i:0;s:1:\"5\";}', 1, 50, 4550, 2, 'omar@email.com');
 
 -- --------------------------------------------------------
 
@@ -95,29 +106,6 @@ INSERT INTO `orders` (`orderID`, `user_email`, `creationDate`, `deliveryDate`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
---
-
-CREATE TABLE `products` (
-  `name` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `price` double NOT NULL,
-  `image` text NOT NULL,
-  `cost` double NOT NULL,
-  `type` text NOT NULL,
-  `productID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`name`, `description`, `price`, `image`, `cost`, `type`, `productID`) VALUES
-('amazing bracelet', 'sssss', 1600, 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png', 300, 'braclets', 3);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -139,12 +127,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`type`, `UserID`, `name`, `username`, `email`, `password`, `phoneNumber`, `address`, `LoggedIN`, `Image`) VALUES
-(0, 2, 'baher', '', 'b@email.com', '$2y$10$WMc5T7vvikoX14Ac6LSpnu0pLxXIWyvbvVZ05qtLx6KKuoawOSZPW', '', '', 0, 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png'),
-(0, 4, 'y', '', 'y@email.com', '$2y$10$zV3X4m2GuGTCcXrdsRJpN.wcbmSigGByrelqLDxr1n2Eupml.33HK', '', '', 0, 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png');
+(0, 6, 'hassan', '', 'hassan@email.com', '$2y$10$CitxI5XVw0TLE6JAZw7UqOefTjYKe.P6TGjhtPxmTXutKrbG55L4K', '', '', 0, 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png'),
+(0, 7, 'omar', '', 'omar@email.com', '$2y$10$.YHjkHYqRqERlWojMceUoezmKT1kF3q6bFBoMS4huccqB5ZcYVs3O', '', '', 0, 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`adminID`);
 
 --
 -- Indexes for table `cart`
@@ -165,12 +159,6 @@ ALTER TABLE `orders`
   ADD PRIMARY KEY (`orderID`);
 
 --
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`productID`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -182,10 +170,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `adminID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -200,16 +194,10 @@ ALTER TABLE `orders`
   MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

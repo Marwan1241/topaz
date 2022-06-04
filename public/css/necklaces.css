@@ -9,7 +9,7 @@ h1{
 }
 
 .product-img{
-   width: 50%;
+   width: 30%;
 }
 
 .product-name{
@@ -24,4 +24,11 @@ h1{
 .product-price{
    font-size: 30px;
    font-weight: 900;
+}
+
+tr{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
 }
