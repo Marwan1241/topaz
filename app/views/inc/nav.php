@@ -132,8 +132,8 @@
 
             </table>
           </div>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" method="post" action="<?php echo URLROOT.'pages/products' ?>">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>

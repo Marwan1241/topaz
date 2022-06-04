@@ -44,7 +44,11 @@ class Rings extends view
                 <td class="product-price"> $ $price</td>
                 <input type="hidden" name="index" value=$id />
                 <input type="hidden" name="price" value=$price />
+<<<<<<< HEAD
                 <td><button class="add-to-cart"type="submit">Add To Cart </button></td>
+=======
+                <button type="submit">Add To Cart </button>
+>>>>>>> 3aae9b5c6398cf99f4e44649c39cf7aa1fdbd35d
               </form>
             </tr>
             EOD;

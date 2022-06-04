@@ -1,42 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>css/about.css">
-  <title>Products</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="<?php echo URLROOT; ?>css/necklaces.css">
+   <title>Products</title>
 </head>
+
+
 <?php
+    require APPROOT . '/views/inc/header.php'; 
+
+
 class Products extends view
 {
 
-
-  public function output(){
-    $this->model->init();
-    $products = $this->model->products;
-    print_r($products);
-    $product = $products[0];
-require APPROOT . '/views/inc/header.php';
-      $page = <<<EOD
-      
-
-<body style="background-color: white !important;">
-  <header class="aboutHeader">
-    <h1>Products</h1>
-  </header>
-  <main class="aboutMain">
-    <h4>$product->name</h4>
-    <h4>$ $product->price</h4>
-  </main>
-  
-
-  <?php require APPROOT . '/views/inc/footer.php'; ?>
-</body>
-EOD;
+  public function output()
+  {
+    $bracelets = $this->model->getProducts();
+    $page = <<<EOD
+    <body>
+   <h1>THE BEST DEALS <br> IN THIS SEASON</h1>
+   <hr>
+   <table>
+   EOD;
+   $URLroot = URLROOT;
+   $rows = '';
+    for($i = 0; $i < count((array)$bracelets) ; $i++)
+    {
+      $image = $bracelets[$i]->image;
+      $name = $bracelets[$i]->name;
+      $description = $bracelets[$i]->description;
+      $price = $bracelets[$i]->price;
+      $id = $bracelets[$i]->productID;
+          $new_row =<<<EOD
+            <tr>
+              <form method="post" action="$URLroot/pages/earrings">
+                <td class="product-image"><img src="$image"></td>
+                <td class="product-name">$name</td>
+                <td class="product-desc">$description</td>
+                <td class="product-price"> $ $price</td>
+                <input type="hidden" name="index" value=$id />
+                <input type="hidden" name="price" value=$price />
+                <button type="submit">Add To Cart </button>
+              </form>
+            </tr>
+            EOD;
+      $rows= $rows.$new_row;
+    }
     echo $page;
-  }
-}
+    echo $rows;
 
+  }
+
+}
+// $sql = "SELECT * FROM necklaces ORDER BY names DESC ";
+// $result = $mysqli->query($sql);
+// $mysqli->close(); 
 ?>
+</table>
+
+<!-- <?php //require APPROOT . '/views/inc/footer.php'; ?> -->
+</body>
 </html>
+
+ 

@@ -40,10 +40,18 @@ class Pages extends Controller
     }
 
     Public function products(){
-        $viewPath = VIEWS_PATH . 'pages/products.php';
-        require_once $viewPath;
-        $productsView = new Products($this->getModel(), $this);
-        $productsView->output();
+        $model = $this->getModel();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $model->searchForProducts($_POST['search']);
+            $viewPath = VIEWS_PATH . 'pages/products.php';
+            require_once $viewPath;
+            $productsView = new Products($model, $this);
+            $productsView->output();
+        }
+        // $viewPath = VIEWS_PATH . 'pages/products.php';
+        // require_once $viewPath;
+        // $productsView = new Products($model, $this);
+        // $productsView->output();
     }
 
      
@@ -64,7 +72,7 @@ class Pages extends Controller
     Public function necklaces(){
         $model = $this->getModel();
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-            echo $model->addToCart($_POST['index'],$_POST['price']);
+            $model->addToCart($_POST['index'],$_POST['price']);
         }
         $viewPath = VIEWS_PATH . 'pages/necklaces.php';
         require_once $viewPath;
