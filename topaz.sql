@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2022 at 06:23 PM
+-- Generation Time: Jun 04, 2022 at 06:36 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.18
 
@@ -106,6 +106,33 @@ INSERT INTO `orders` (`orderID`, `user_email`, `creationDate`, `deliveryDate`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `name` varchar(100) NOT NULL,
+  `description` text NOT NULL,
+  `price` double NOT NULL,
+  `image` text NOT NULL,
+  `cost` double NOT NULL,
+  `type` text NOT NULL,
+  `productID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`name`, `description`, `price`, `image`, `cost`, `type`, `productID`) VALUES
+('amazing bracelet', 'sssss', 600, 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png', 300, 'bracelets', 3),
+('ring', 'amazing ring\r\n\r\n', 500, 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png', 100, 'rings', 5),
+('second bracelet', 'bracelet 2', 600, 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png', 100, 'bracelets', 6),
+('earrings', 'earring', 400, 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png', 100, 'earrings', 7),
+('necklace', 'necklace', 600, 'https://upload.wikimedia.org/wikipedia/commons/2/2f/No-photo-m.png', 200, 'necklaces', 8);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -159,6 +186,12 @@ ALTER TABLE `orders`
   ADD PRIMARY KEY (`orderID`);
 
 --
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`productID`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -192,6 +225,12 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `orders`
   MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
