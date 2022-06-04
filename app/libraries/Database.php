@@ -67,7 +67,7 @@ class Database
     // Execute the prepared statement
     public function execute()
     {
-        return $this->stmt;
+        return $this->stmt->execute();
     }
 
     // Get result set as array of objects
